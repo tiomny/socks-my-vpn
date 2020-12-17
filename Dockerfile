@@ -15,9 +15,9 @@ RUN echo "Configuring the apk"						&&\
 RUN go get github.com/golang/dep					&&\
 	go install github.com/golang/dep/cmd/dep
 
-RUN	go get -u github.com/ohpe/socks-my-vpn
+RUN	go get -u github.com/tiomny/socks-my-vpn
 
-WORKDIR $GOPATH/src/github.com/ohpe/socks-my-vpn
+WORKDIR $GOPATH/src/github.com/tiomny/socks-my-vpn
 RUN dep ensure -update -v
 RUN go build -o /go/bin/socks-my-vpn
 
